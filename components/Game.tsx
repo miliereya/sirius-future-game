@@ -30,9 +30,7 @@ export const Game: FC<GameProps> = ({ params, setProcess, setMusicPlaying }) => 
         if (itemsPlaced.length + 1 === items.length) {
             playAudio('/audio/game-end.mp3')
         }
-        let arr: string[] = [...itemsPlaced]
-        console.log(arr)
-        setItemsPlaced([...arr, name])
+        setItemsPlaced([...itemsPlaced, name])
     }
 
     return (
