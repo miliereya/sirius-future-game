@@ -27,11 +27,12 @@ export const Game: FC<GameProps> = ({ params, setProcess, setMusicPlaying }) => 
     const [itemsPlaced, setItemsPlaced] = useState<string[]>([])
 
     const itemSuccessHandler = (name: string) => {
-        if (itemsPlaced.length + 1 === items.length) {
-            playAudio('/audio/game-end.mp3')
-        }
         setItemsPlaced((prev) => [...prev, name])
     }
+
+    useEffect(() => {
+        itemsPlaced.length === items.length && (setMusicPlaying(false), playAudio('/audio/game-end.mp3'))
+    }, [itemsPlaced])
 
     return (
         <DndProvider backend={!isMobile() ? HTML5Backend : TouchBackend}>
@@ -40,7 +41,7 @@ export const Game: FC<GameProps> = ({ params, setProcess, setMusicPlaying }) => 
 
                     <WinPopup>
                         <WinText>Молодец! Ты успешно справился с заданием!</WinText>
-                        <PlayButton onClick={() => { setMusicPlaying(false), playAudio('/audio/button.mp3'), setProcess('settings'), setItemsPlaced([]) }}>ЗАНОВО</PlayButton>
+                        <PlayButton onClick={() => {playAudio('/audio/button.mp3'), setProcess('settings'), setItemsPlaced([]) }}>ЗАНОВО</PlayButton>
                     </WinPopup>
                 }
                 <ItemsWrapper>
