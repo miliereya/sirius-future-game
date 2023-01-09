@@ -1,6 +1,6 @@
 # Match game for kids
 
-This simple match game was made on React with react-dnd library. Random themes, random values in given range and different sound effects will perfectly fit for the kids. Currently not avaliable on mobiles and laptops. 
+This simple match game was made on React with react-dnd library. Random themes, random values in given range and different sound effects will perfectly fit for the kids. Currently not available on mobiles and laptops. 
 
 Warning! Sometimes heroku apps don't upload immediatly, so you'll need to reload the page
 
