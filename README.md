@@ -4,7 +4,7 @@ This simple match game was made on React with react-dnd library. Random themes, 
 
 Warning! Sometimes heroku apps don't upload immediatly, so you'll need to reload the page
 
-Deployed - https://simple-match-game.herokuapp.com
+Deployed - https://sirius-future-game.vercel.app/
 
 
 # #Note
